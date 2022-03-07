@@ -7,8 +7,6 @@ import java.util.Base64;
 
 public class PinManager {
 
-    // TODO: crear las pruebas unitarias (JUnit) de esta clase y sus metodos
-
     private PinManager() {
     }
 
