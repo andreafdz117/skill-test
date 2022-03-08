@@ -4,6 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+
+import org.aspectj.bridge.Message;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Product {
@@ -11,11 +18,19 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @NotBlank
     private String name;
+    
+    @NotBlank
     private String description;
+    
+    
     private Double price;
+    
+    @Min(value =  1)
     private Integer quantity;
-
+   
     public Integer getId() {
         return id;
     }
